@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.10)
 project(h5cpp
     LANGUAGES CXX C
     VERSION 0.4.1
@@ -89,8 +89,8 @@ install(DIRECTORY examples
 #=============================================================================
 set(DISABLE_TESTS False CACHE BOOL "Disable building unit tests")
 if(NOT DISABLE_TESTS)
-	enable_testing()
-	include(Catch)
+    enable_testing()
+    include(Catch)
     add_subdirectory(test)
 endif()
 
