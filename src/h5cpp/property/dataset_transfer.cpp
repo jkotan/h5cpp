@@ -47,7 +47,7 @@ DatasetTransferList::DatasetTransferList(ObjectHandle &&handle) :
   }
 }
 
-#ifdef WITH_MPI
+#ifdef H5CPP_WITH_MPI
 
 #ifdef __GNUC__
 #pragma GCC diagnostic push
