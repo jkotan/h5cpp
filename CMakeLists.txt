@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.10)
 project(h5cpp
     LANGUAGES CXX C
     VERSION 0.4.1
@@ -10,31 +10,36 @@ project(h5cpp
 #=============================================================================
 set(EXTRA_MODULES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${EXTRA_MODULES_DIR})
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/subprojects/catch2/cmake)
 
+option(H5CPP_BUILD_SHARED "Build h5cpp as a shared library" ${BUILD_SHARED_LIBS})
+if(H5CPP_BUILD_SHARED)
+  set(BUILD_SHARED_LIBS ON)
+endif()
 #=============================================================================
 # Conan
 #=============================================================================
-# SET(CONAN_DISABLE_CHECK_COMPILER TRUE)
-set(CONAN_PROFILE "default" CACHE STRING "Name of conan profile to use, uses default by default")
-set(CONAN "AUTO" CACHE STRING "conan options AUTO (conan must be in path), MANUAL (expects conanbuildinfo.cmake in build directory) or DISABLE")
-set(CONAN_FILE "conanfile_ess.txt" CACHE STRING "The conanfile to use for the build")
-if(${CONAN} MATCHES "AUTO")
+set(H5CPP_CONAN "AUTO" CACHE STRING "conan options AUTO (conan must be in path), MANUAL (expects conanbuildinfo.cmake in build directory) or DISABLE")
+set(H5CPP_CONAN_PROFILE "default" CACHE STRING "Name of conan profile to use, uses default by default")
+set(H5CPP_CONAN_FILE "conanfile_ess.txt" CACHE STRING "The conanfile to use for the build")
+
+if(${H5CPP_CONAN} MATCHES "AUTO")
   include(${EXTRA_MODULES_DIR}/ConanSetup.cmake)
-  conan_cmake_run(CONANFILE ${CONAN_FILE}
-      PROFILE ${CONAN_PROFILE}
+  conan_cmake_run(CONANFILE ${H5CPP_CONAN_FILE}
+      PROFILE ${H5CPP_CONAN_PROFILE}
       BASIC_SETUP NO_OUTPUT_DIRS KEEP_RPATHS
       BUILD_TYPE "None"
       BUILD outdated)
-elseif(${CONAN} MATCHES "MANUAL")
+   list(PREPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+elseif(${H5CPP_CONAN} MATCHES "MANUAL")
   if(EXISTS "${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
     include("${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
     conan_basic_setup(NO_OUTPUT_DIRS KEEP_RPATHS)
+    list(PREPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
   else()
-    message(FATAL_ERROR "CONAN set to MANUAL but no file named conanbuildinfo.cmake found in build directory")
+    message(FATAL_ERROR "H5CPP_CONAN set to MANUAL but no file named conanbuildinfo.cmake found in build directory")
   endif()
-elseif(NOT ${CONAN} MATCHES "DISABLE")
-  message(FATAL_ERROR "Unrecognised option for CONAN (${CONAN}), use AUTO, MANUAL or DISABLE")
+elseif(NOT ${H5CPP_CONAN} MATCHES "DISABLE")
+  message(FATAL_ERROR "Unrecognised option for H5CPP_CONAN (${H5CPP_CONAN}), use AUTO, MANUAL or DISABLE")
 endif()
 
 #=============================================================================
@@ -55,24 +60,35 @@ include(DoxygenUtilities)
 #=============================================================================
 # compiler and library configuration
 #=============================================================================
-set(WITH_BOOST ON CACHE BOOL "enable Boost filesystem support")
-if(WITH_BOOST)
-  message(STATUS "Using Boost library for filesystem")
-  include(${EXTRA_MODULES_DIR}/BoostLibraryConfig.cmake)
+option(H5CPP_WITH_BOOST "enable Boost filesystem support" ON)
+if(H5CPP_WITH_BOOST)
+  find_package(Boost 1.41 COMPONENTS filesystem system REQUIRED)
+  h5cpp_message(STATUS "Using Boost library for filesystem")
 else() 
   # if we do not use Boost we have to ensure a C++ standard of at least 2017
   # since we require the std::filesystem API
   set(CMAKE_CXX_STANDARD 17)
-  message(STATUS "Using std library for filesystem")
+  h5cpp_message(STATUS "Using std library for filesystem")
 endif()
 
 include(${EXTRA_MODULES_DIR}/CompilerConfig.cmake)
 include(${EXTRA_MODULES_DIR}/MPIConfig.cmake)
 include(${EXTRA_MODULES_DIR}/HDF5LibraryConfig.cmake)
 
+if(H5CPP_BUILD_SHARED)
+  h5cpp_message(STATUS "Building shared library")
+else()
+  h5cpp_message(STATUS "Building static library")
+endif()
+if (H5CPP_WITH_MPI)
+  h5cpp_message(STATUS "Building with MPI support")
+endif()
+
+find_package(ZLIB)
+
 add_subdirectory(src)
-set( BUILD_DOCS ON CACHE BOOL "Build documentation")
-if(BUILD_DOCS)
+option(H5CPP_BUILD_DOCS "Build documentation" ON)
+if(H5CPP_BUILD_DOCS)
   add_subdirectory(doc)
 endif()
 
@@ -85,21 +101,22 @@ install(DIRECTORY examples
 #=============================================================================
 # unit tests if GTest if present
 #=============================================================================
-set(DISABLE_TESTS False CACHE BOOL "Disable building unit tests")
-if(NOT DISABLE_TESTS)
-	enable_testing()
-	include(Catch)
+option(H5CPP_DISABLE_TESTS "Disable building unit tests" OFF)
+if(NOT H5CPP_DISABLE_TESTS)
+    find_package(Catch2)
+    enable_testing()
+    include(Catch)
     add_subdirectory(test)
 endif()
 
 #=============================================================================
 # create package file
 #=============================================================================
-set(WITH_SWMR OFF CACHE BOOL "enable SWMR support")
-set(WITH_VDS OFF CACHE BOOL "enable VDS support")
+option(H5CPP_WITH_SWMR "enable SWMR support" OFF)
+option(H5CPP_WITH_VDS "enable VDS support" OFF)
 if(HDF5_VERSION VERSION_GREATER 1.10.0 OR HDF5_VERSION VERSION_EQUAL 1.10.0)
-  set(WITH_SWMR ON)
-  set(WITH_VDS ON)
+  set(H5CPP_WITH_SWMR ON)
+  set(H5CPP_WITH_VDS ON)
 endif()
 
 #

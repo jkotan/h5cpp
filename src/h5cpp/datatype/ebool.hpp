@@ -32,6 +32,14 @@
 #include <sstream>
 
 #ifndef _MSC_VER
+#ifdef __APPLE__
+  #ifdef TRUE
+    #undef TRUE
+  #endif
+  #ifdef FALSE
+    #undef FALSE
+  #endif
+#endif
 namespace hdf5
 {
 namespace datatype

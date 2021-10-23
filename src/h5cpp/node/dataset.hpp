@@ -955,7 +955,7 @@ template<typename T>
 void Dataset::read(T &data,const property::DatasetTransferList &dtpl) const
 {
   auto memory_space = hdf5::dataspace::create(data);
-  auto memory_type  = hdf5::datatype::create(data);
+  auto memory_type = datatype();
   auto file_space = dataspace();
   file_space.selection.all();
 
