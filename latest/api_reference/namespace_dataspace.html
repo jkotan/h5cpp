@@ -176,11 +176,11 @@ this function will return false.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace9Dataspace9selectionE">
-<span id="_CPPv3N4hdf59dataspace9Dataspace9selectionE"></span><span id="_CPPv2N4hdf59dataspace9Dataspace9selectionE"></span><span id="hdf5::dataspace::Dataspace::selection__SelectionManager"></span><span class="target" id="classhdf5_1_1dataspace_1_1Dataspace_1a01de3b45be49bf79b4d95cdcf9500c13"></span><span class="n"><span class="pre">SelectionManager</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">selection</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace9Dataspace9selectionE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4hdf59dataspace9Dataspace9selectionE"></span><span id="_CPPv2N4hdf59dataspace9Dataspace9selectionE"></span><span id="hdf5::dataspace::Dataspace::selection__SelectionManager"></span><span class="target" id="classhdf5_1_1dataspace_1_1Dataspace_1a01de3b45be49bf79b4d95cdcf9500c13"></span><a class="reference internal" href="#_CPPv4N4hdf59dataspace16SelectionManagerE" title="hdf5::dataspace::SelectionManager"><span class="n"><span class="pre">SelectionManager</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">selection</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace9Dataspace9selectionE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>access to selection manager </p>
-<p>This public member provides access to the selection manager of the dataspace. See the SelectionManager documentation for interface details.</p>
+<p>This public member provides access to the selection manager of the dataspace. See the <a class="reference internal" href="#classhdf5_1_1dataspace_1_1SelectionManager"><span class="std std-ref">SelectionManager</span></a> documentation for interface details.</p>
 <p><dl class="simple">
-<dt><strong>See</strong></dt><dd><p>SelectionManager </p>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classhdf5_1_1dataspace_1_1SelectionManager"><span class="std std-ref">SelectionManager</span></a> </p>
 </dd>
 </dl>
 </p>
@@ -343,8 +343,8 @@ this function will return false.</p>
 </section>
 <section id="selection-related-classes-and-functions">
 <h2>Selection related classes and functions<a class="headerlink" href="#selection-related-classes-and-functions" title="Permalink to this headline">¶</a></h2>
-<section id="selection">
-<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Selection</span></code><a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h3>
+<section id="selection-and-selectionlist">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Selection</span></code> and <code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">SelectionList</span></code><a class="headerlink" href="#selection-and-selectionlist" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace9SelectionE">
 <span id="_CPPv3N4hdf59dataspace9SelectionE"></span><span id="_CPPv2N4hdf59dataspace9SelectionE"></span><span id="hdf5::dataspace::Selection"></span><span class="target" id="classhdf5_1_1dataspace_1_1Selection"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Selection</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace9SelectionE" title="Permalink to this definition">¶</a><br /></dt>
@@ -401,8 +401,60 @@ this function will return false.</p>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Selection10dimensionsEv">
+<span id="_CPPv3NK4hdf59dataspace9Selection10dimensionsEv"></span><span id="_CPPv2NK4hdf59dataspace9Selection10dimensionsEv"></span><span id="hdf5::dataspace::Selection::dimensionsC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Selection_1a645c39d0bcabd8f445b02d90386094dc"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Dimensions</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Selection10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get current dimensions </p>
+<p>Get a number of elements along each dimension a selection spans this is particularly useful in the case of a <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Hyperslab"><span class="std std-ref">Hyperslab</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection dimentsions </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Selection4sizeEv">
+<span id="_CPPv3NK4hdf59dataspace9Selection4sizeEv"></span><span id="_CPPv2NK4hdf59dataspace9Selection4sizeEv"></span><span id="hdf5::dataspace::Selection::sizeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Selection_1ad8f5aac2160cb3343d6b38ec12056419"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Selection4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection size </p>
+<p>Get the total number of elements adressed by an individual selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Selection4typeEv">
+<span id="_CPPv3NK4hdf59dataspace9Selection4typeEv"></span><span id="_CPPv2NK4hdf59dataspace9Selection4typeEv"></span><span id="hdf5::dataspace::Selection::typeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Selection_1ab9ec83b1c6b252cb47c06ab725102c8a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionTypeE" title="hdf5::dataspace::SelectionType"><span class="n"><span class="pre">SelectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Selection4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection type </p>
+<p>Get the type of the selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace13SelectionListE">
+<span id="_CPPv3N4hdf59dataspace13SelectionListE"></span><span id="_CPPv2N4hdf59dataspace13SelectionListE"></span><span class="target" id="namespacehdf5_1_1dataspace_1a342c8cab63f884e78dc97f56999f64dd"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SelectionList</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">OperationWithSelection</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace13SelectionListE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspaceooERK9DataspaceRK13SelectionList">
+<span id="_CPPv3N4hdf59dataspaceooERK9DataspaceRK13SelectionList"></span><span id="_CPPv2N4hdf59dataspaceooERK9DataspaceRK13SelectionList"></span><span id="hdf5::dataspace::sor-operator__DataspaceCR.SelectionListCR"></span><span class="target" id="namespacehdf5_1_1dataspace_1aca79ce7fda5310b8a131598deb077501"></span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">||</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionListE" title="hdf5::dataspace::SelectionList"><span class="n"><span class="pre">SelectionList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selections</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspaceooERK9DataspaceRK13SelectionList" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </section>
 <section id="hyperslab">
@@ -730,8 +782,55 @@ this function will return false.</p>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Hyperslab10dimensionsEv">
+<span id="_CPPv3NK4hdf59dataspace9Hyperslab10dimensionsEv"></span><span id="_CPPv2NK4hdf59dataspace9Hyperslab10dimensionsEv"></span><span id="hdf5::dataspace::Hyperslab::dimensionsC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Hyperslab_1a80fed067c1af6ea50c707de3827eba4b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Dimensions</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Hyperslab10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get current dimensions </p>
+<p>Get a number of elements along each dimension a selection spans this is particularly useful in the case of a <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Hyperslab"><span class="std std-ref">Hyperslab</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection dimentsions </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Hyperslab4sizeEv">
+<span id="_CPPv3NK4hdf59dataspace9Hyperslab4sizeEv"></span><span id="_CPPv2NK4hdf59dataspace9Hyperslab4sizeEv"></span><span id="hdf5::dataspace::Hyperslab::sizeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Hyperslab_1aa6ee044dcdcbecbcc6ce580e4b65d095"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Hyperslab4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection size </p>
+<p>Get the total number of elements adressed by an individual selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace9Hyperslab4typeEv">
+<span id="_CPPv3NK4hdf59dataspace9Hyperslab4typeEv"></span><span id="_CPPv2NK4hdf59dataspace9Hyperslab4typeEv"></span><span id="hdf5::dataspace::Hyperslab::typeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Hyperslab_1a5ef2a01cdc0e7d87d45e3c50846f09d4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionTypeE" title="hdf5::dataspace::SelectionType"><span class="n"><span class="pre">SelectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace9Hyperslab4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection type </p>
+<p>Get the type of the selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspaceooERK9DataspaceRK9Hyperslab">
+<span id="_CPPv3N4hdf59dataspaceooERK9DataspaceRK9Hyperslab"></span><span id="_CPPv2N4hdf59dataspaceooERK9DataspaceRK9Hyperslab"></span><span id="hdf5::dataspace::sor-operator__DataspaceCR.HyperslabCR"></span><span class="target" id="namespacehdf5_1_1dataspace_1a20fb3487bf4c980d57323d191c0daa12"></span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">||</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9HyperslabE" title="hdf5::dataspace::Hyperslab"><span class="n"><span class="pre">Hyperslab</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selection</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspaceooERK9DataspaceRK9Hyperslab" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </section>
 <section id="points">
@@ -844,7 +943,335 @@ this function will return false.</p>
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace6Points4sizeEv">
+<span id="_CPPv3NK4hdf59dataspace6Points4sizeEv"></span><span id="_CPPv2NK4hdf59dataspace6Points4sizeEv"></span><span id="hdf5::dataspace::Points::sizeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Points_1a2629a05ba323eca8a0fdc2d04b5c2330"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace6Points4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection size </p>
+<p>Get the total number of elements adressed by an individual selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace6Points4typeEv">
+<span id="_CPPv3NK4hdf59dataspace6Points4typeEv"></span><span id="_CPPv2NK4hdf59dataspace6Points4typeEv"></span><span id="hdf5::dataspace::Points::typeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Points_1a9dc753c89b044909345c81d0e2a9f727"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionTypeE" title="hdf5::dataspace::SelectionType"><span class="n"><span class="pre">SelectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace6Points4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selection type </p>
+<p>Get the type of the selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the selection type enumerator </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace6Points10dimensionsEv">
+<span id="_CPPv3NK4hdf59dataspace6Points10dimensionsEv"></span><span id="_CPPv2NK4hdf59dataspace6Points10dimensionsEv"></span><span id="hdf5::dataspace::Points::dimensionsC"></span><span class="target" id="classhdf5_1_1dataspace_1_1Points_1a28b7716b3dacb77adab9672fcd44861c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Dimensions</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace6Points10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get current dimensions </p>
+<p>Get a number of elements along each dimension a selection spans this is particularly useful in the case of a <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Hyperslab"><span class="std std-ref">Hyperslab</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selection dimentsions </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
+</dd></dl>
+
+</section>
+<section id="selectionmanager">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">SelectionManager</span></code><a class="headerlink" href="#selectionmanager" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace16SelectionManagerE">
+<span id="_CPPv3N4hdf59dataspace16SelectionManagerE"></span><span id="_CPPv2N4hdf59dataspace16SelectionManagerE"></span><span id="hdf5::dataspace::SelectionManager"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SelectionManager</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace16SelectionManagerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>interface for selection management </p>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="#classhdf5_1_1dataspace_1_1SelectionManager"><span class="std std-ref"><span class="pre">SelectionManager</span></span></a></code> provides an interface to access the selections made on a <code class="docutils literal notranslate"><a class="reference internal" href="#classhdf5_1_1dataspace_1_1Dataspace"><span class="std std-ref"><span class="pre">Dataspace</span></span></a></code>. It stores a reference to the dataspace it belongs to and applies or removes selections on this dataspace. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerEv">
+<span id="_CPPv3N4hdf59dataspace16SelectionManager16SelectionManagerEv"></span><span id="_CPPv2N4hdf59dataspace16SelectionManager16SelectionManagerEv"></span><span id="hdf5::dataspace::SelectionManager::SelectionManager"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1a75c53223c68c3f67c9b458dc3933ea43"></span><span class="sig-name descname"><span class="n"><span class="pre">SelectionManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>not default constructible </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerER9Dataspace">
+<span id="_CPPv3N4hdf59dataspace16SelectionManager16SelectionManagerER9Dataspace"></span><span id="_CPPv2N4hdf59dataspace16SelectionManager16SelectionManagerER9Dataspace"></span><span id="hdf5::dataspace::SelectionManager::SelectionManager__DataspaceR"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1a488a086ea6ad7ed1db3280d68d690d9c"></span><span class="sig-name descname"><span class="n"><span class="pre">SelectionManager</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerER9Dataspace" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>constructor </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>space</strong> – reference to the dataspace the manager instance belongs to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerERK16SelectionManager">
+<span id="_CPPv3N4hdf59dataspace16SelectionManager16SelectionManagerERK16SelectionManager"></span><span id="_CPPv2N4hdf59dataspace16SelectionManager16SelectionManagerERK16SelectionManager"></span><span id="hdf5::dataspace::SelectionManager::SelectionManager__SelectionManagerCR"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1a6247f51d315068970ec53504a5c2ceae"></span><span class="sig-name descname"><span class="n"><span class="pre">SelectionManager</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerERK16SelectionManager" title="hdf5::dataspace::SelectionManager::SelectionManager"><span class="n"><span class="pre">SelectionManager</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace16SelectionManager16SelectionManagerERK16SelectionManager" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>copy constructor </p>
+<p>Use the default implementation here </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace16SelectionManagerclE18SelectionOperationRK9Selection">
+<span id="_CPPv3NK4hdf59dataspace16SelectionManagerclE18SelectionOperationRK9Selection"></span><span id="_CPPv2NK4hdf59dataspace16SelectionManagerclE18SelectionOperationRK9Selection"></span><span id="hdf5::dataspace::SelectionManager::call-operator__SelectionOperation.SelectionCRC"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1a24ea1a0df15f7ebbf6f0d6c2008e5ef7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4hdf59dataspace18SelectionOperationE" title="hdf5::dataspace::SelectionOperation"><span class="n"><span class="pre">SelectionOperation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ops</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9SelectionE" title="hdf5::dataspace::Selection"><span class="n"><span class="pre">Selection</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selection</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace16SelectionManagerclE18SelectionOperationRK9Selection" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>apply a selection </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ops</strong> – selection operator </p></li>
+<li><p><strong>selection</strong> – reference to the selection to apply </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace16SelectionManager4sizeEv">
+<span id="_CPPv3NK4hdf59dataspace16SelectionManager4sizeEv"></span><span id="_CPPv2NK4hdf59dataspace16SelectionManager4sizeEv"></span><span id="hdf5::dataspace::SelectionManager::sizeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1a34b7a0f982ced394cf72d2bf2001d1fb"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace16SelectionManager4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return the number of elements in the current selection </p>
+<p>This value may differ from the number of elements stored in a dataspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace16SelectionManager4typeEv">
+<span id="_CPPv3NK4hdf59dataspace16SelectionManager4typeEv"></span><span id="_CPPv2NK4hdf59dataspace16SelectionManager4typeEv"></span><span id="hdf5::dataspace::SelectionManager::typeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1aa4e712a6aad3cd599f30ce427dde1548"></span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionTypeE" title="hdf5::dataspace::SelectionType"><span class="n"><span class="pre">SelectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace16SelectionManager4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the type of the current selection </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace16SelectionManager3allEv">
+<span id="_CPPv3NK4hdf59dataspace16SelectionManager3allEv"></span><span id="_CPPv2NK4hdf59dataspace16SelectionManager3allEv"></span><span id="hdf5::dataspace::SelectionManager::allC"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1aeb39b83aeb6d1c703247d5de9a27b829"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">all</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace16SelectionManager3allEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>select everything </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace16SelectionManager4noneEv">
+<span id="_CPPv3NK4hdf59dataspace16SelectionManager4noneEv"></span><span id="_CPPv2NK4hdf59dataspace16SelectionManager4noneEv"></span><span id="hdf5::dataspace::SelectionManager::noneC"></span><span class="target" id="classhdf5_1_1dataspace_1_1SelectionManager_1ae1361e1e57d0d02f6b78d0a3d7f4bae6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">none</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace16SelectionManager4noneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>select nothing </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="view">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">View</span></code><a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4ViewE">
+<span id="_CPPv3N4hdf59dataspace4ViewE"></span><span id="_CPPv2N4hdf59dataspace4ViewE"></span><span id="hdf5::dataspace::View"></span><span class="target" id="classhdf5_1_1dataspace_1_1View"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4ViewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>guard object for selections </p>
+<p>The <a class="reference internal" href="#classhdf5_1_1dataspace_1_1View"><span class="std std-ref">View</span></a> class applies selections on a dataspace. Since a copy of the original dataspace is created the former one remains unchanged. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4View4ViewEv">
+<span id="_CPPv3N4hdf59dataspace4View4ViewEv"></span><span id="_CPPv2N4hdf59dataspace4View4ViewEv"></span><span id="hdf5::dataspace::View::View"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1ae9301a73c738baa23f3b7c7fd815b0dc"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4View4ViewEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>default constructor </p>
+<p>Need this for STL container compatibility. Can rely on default implementation provided by the compiler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4View4ViewERK4View">
+<span id="_CPPv3N4hdf59dataspace4View4ViewERK4View"></span><span id="_CPPv2N4hdf59dataspace4View4ViewERK4View"></span><span id="hdf5::dataspace::View::View__ViewCR"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1a93526a6d702ea04c486d975b0c9d3dcc"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace4View4ViewERK4View" title="hdf5::dataspace::View::View"><span class="n"><span class="pre">View</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4View4ViewERK4View" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>copy constructor </p>
+<p>Need this for STL container compatibility. Use the default implementation provided by the compiler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4View4ViewERK9Dataspace">
+<span id="_CPPv3N4hdf59dataspace4View4ViewERK9Dataspace"></span><span id="_CPPv2N4hdf59dataspace4View4ViewERK9Dataspace"></span><span id="hdf5::dataspace::View::View__DataspaceCR"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1a92efefd293449d995e7939d384d7edd2"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4View4ViewERK9Dataspace" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>constructor </p>
+<p>This constructor applies now selection but selects all elements in the dataspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in the case of a failure </p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>space</strong> – reference to the original dataspace </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4View4ViewERK9DataspaceRK13SelectionList">
+<span id="_CPPv3N4hdf59dataspace4View4ViewERK9DataspaceRK13SelectionList"></span><span id="_CPPv2N4hdf59dataspace4View4ViewERK9DataspaceRK13SelectionList"></span><span id="hdf5::dataspace::View::View__DataspaceCR.SelectionListCR"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1af8a9f76311c14b50f6467e68e22c1966"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionListE" title="hdf5::dataspace::SelectionList"><span class="n"><span class="pre">SelectionList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selections</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4View4ViewERK9DataspaceRK13SelectionList" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>constructor </p>
+<p>Creates a copy of the dataspace and applies all selections provieed by th selection list to this copy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure </p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>space</strong> – reference to the original dataspace </p></li>
+<li><p><strong>selections</strong> – reference to the list of selections to apply </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace4View4ViewERK9DataspaceRK9Hyperslab">
+<span id="_CPPv3N4hdf59dataspace4View4ViewERK9DataspaceRK9Hyperslab"></span><span id="_CPPv2N4hdf59dataspace4View4ViewERK9DataspaceRK9Hyperslab"></span><span id="hdf5::dataspace::View::View__DataspaceCR.HyperslabCR"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1aa582823c047dc37ba7c64d6d927cb7fa"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9HyperslabE" title="hdf5::dataspace::Hyperslab"><span class="n"><span class="pre">Hyperslab</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selection</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace4View4ViewERK9DataspaceRK9Hyperslab" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>constructor </p>
+<p>Creates a copy of the dataspace and applies a single hyperslab on it. This is a conveniance constructor in the case that we need only a single hyperslab.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure </p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>space</strong> – reference to the original dataspace </p></li>
+<li><p><strong>selection</strong> – reference to the original hyperslab </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace4ViewclERK13SelectionList">
+<span id="_CPPv3NK4hdf59dataspace4ViewclERK13SelectionList"></span><span id="_CPPv2NK4hdf59dataspace4ViewclERK13SelectionList"></span><span id="hdf5::dataspace::View::call-operator__SelectionListCRC"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1a767475c2e803e6504718fb152769653b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionListE" title="hdf5::dataspace::SelectionList"><span class="n"><span class="pre">SelectionList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">selections</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace4ViewclERK13SelectionList" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>apply a new set of selections </p>
+<p>Calling this operator will erase all current selections and replace them by the new set of selections provided by the <code class="docutils literal notranslate"><span class="pre">selections</span></code> argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace4ViewclERK9Hyperslab">
+<span id="_CPPv3NK4hdf59dataspace4ViewclERK9Hyperslab"></span><span id="_CPPv2NK4hdf59dataspace4ViewclERK9Hyperslab"></span><span id="hdf5::dataspace::View::call-operator__HyperslabCRC"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1a6a9f477c61b77fae3965389d19aa745d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9HyperslabE" title="hdf5::dataspace::Hyperslab"><span class="n"><span class="pre">Hyperslab</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">slab</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace4ViewclERK9Hyperslab" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set a single hyperslab </p>
+<p>This is a mere convienance function for situations where a single <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Hyperslab"><span class="std std-ref">Hyperslab</span></a> should be selected. This even might be the most common case at all.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws</dt>
+<dd class="field-odd"><p><strong>std::runtime_error</strong> – in case of a failure </p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>slab</strong> – reference to the hyperslab </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4hdf59dataspace4View4sizeEv">
+<span id="_CPPv3NK4hdf59dataspace4View4sizeEv"></span><span id="_CPPv2NK4hdf59dataspace4View4sizeEv"></span><span id="hdf5::dataspace::View::sizeC"></span><span class="target" id="classhdf5_1_1dataspace_1_1View_1ae284a759adcb9a0be704cb748fbc2039"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59dataspace4View4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get number of elements in the view </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="dataspaceholder">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">DataspaceHolder</span></code><a class="headerlink" href="#dataspaceholder" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace15DataspaceHolderE">
+<span id="_CPPv3N4hdf59dataspace15DataspaceHolderE"></span><span id="_CPPv2N4hdf59dataspace15DataspaceHolderE"></span><span id="hdf5::dataspace::DataspaceHolder"></span><span class="target" id="classhdf5_1_1dataspace_1_1DataspaceHolder"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DataspaceHolder</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace15DataspaceHolderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>data space object holder </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace15DataspaceHolder15DataspaceHolderEv">
+<span id="_CPPv3N4hdf59dataspace15DataspaceHolder15DataspaceHolderEv"></span><span id="_CPPv2N4hdf59dataspace15DataspaceHolder15DataspaceHolderEv"></span><span id="hdf5::dataspace::DataspaceHolder::DataspaceHolder"></span><span class="target" id="classhdf5_1_1dataspace_1_1DataspaceHolder_1a3c742cb5bfad5d9832e50d69a0b7cd2b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataspaceHolder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace15DataspaceHolder15DataspaceHolderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>default constructor </p>
+<p>The default constructor. The dataspace pool is created internally </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace15DataspaceHolder15DataspaceHolderER13DataspacePool">
+<span id="_CPPv3N4hdf59dataspace15DataspaceHolder15DataspaceHolderER13DataspacePool"></span><span id="_CPPv2N4hdf59dataspace15DataspaceHolder15DataspaceHolderER13DataspacePool"></span><span id="hdf5::dataspace::DataspaceHolder::DataspaceHolder__DataspacePoolR"></span><span class="target" id="classhdf5_1_1dataspace_1_1DataspaceHolder_1a6b0b1e1c75d71ca9c670a05053246bd3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataspaceHolder</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13DataspacePoolE" title="hdf5::dataspace::DataspacePool"><span class="n"><span class="pre">DataspacePool</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace15DataspaceHolder15DataspaceHolderER13DataspacePool" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>constructor </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pool</strong> – dataspace pool </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN4hdf59dataspace15DataspaceHolder3getERK9DataspaceRK1T">
+<span id="_CPPv3I0EN4hdf59dataspace15DataspaceHolder3getERK1T"></span><span id="_CPPv2I0EN4hdf59dataspace15DataspaceHolder3getERK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhdf5_1_1dataspace_1_1DataspaceHolder_1a22158a1131bc9da7dff06023ebe4cdb6"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN4hdf59dataspace15DataspaceHolder3getERK9DataspaceRK1T" title="hdf5::dataspace::DataspaceHolder::get::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN4hdf59dataspace15DataspaceHolder3getERK9DataspaceRK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>factory holder method for getting reference of data spaces </p>
+<p>Returns data space reference for static data space object if available. Otherwise it creates a new data space object and returns its reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> – provided dataspace data </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>data space reference for data space object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="dataspacepool">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">DataspacePool</span></code><a class="headerlink" href="#dataspacepool" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace13DataspacePoolE">
+<span id="_CPPv3N4hdf59dataspace13DataspacePoolE"></span><span id="_CPPv2N4hdf59dataspace13DataspacePoolE"></span><span id="hdf5::dataspace::DataspacePool"></span><span class="target" id="classhdf5_1_1dataspace_1_1DataspacePool"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DataspacePool</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59dataspace13DataspacePoolE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>data space object pool </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspace13DataspacePool9getSimpleE6size_t">
+<span id="_CPPv3N4hdf59dataspace13DataspacePool9getSimpleE6size_t"></span><span id="_CPPv2N4hdf59dataspace13DataspacePool9getSimpleE6size_t"></span><span id="hdf5::dataspace::DataspacePool::getSimple__s"></span><span class="target" id="classhdf5_1_1dataspace_1_1DataspacePool_1a6f35a7054121b2d2bba52dcec50def41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace9DataspaceE" title="hdf5::dataspace::Dataspace"><span class="n"><span class="pre">Dataspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSimple</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspace13DataspacePool9getSimpleE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>pool of reference of <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Simple"><span class="std std-ref">Simple</span></a> data spaces </p>
+<p>Returns data space reference for static data space object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> – dimension of 1D <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Simple"><span class="std std-ref">Simple</span></a> <a class="reference internal" href="#classhdf5_1_1dataspace_1_1Dataspace"><span class="std std-ref">Dataspace</span></a> to get or create </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>data space reference for data space object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="type-traits">
+<h2>Type traits<a class="headerlink" href="#type-traits" title="Permalink to this headline">¶</a></h2>
+<section id="typetrait">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TypeTrait</span></code><a class="headerlink" href="#typetrait" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN4hdf59dataspace9TypeTraitE">
+<span id="_CPPv3I0EN4hdf59dataspace9TypeTraitE"></span><span id="_CPPv2I0EN4hdf59dataspace9TypeTraitE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhdf5_1_1dataspace_1_1TypeTrait"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TypeTrait</span></span></span><a class="headerlink" href="#_CPPv4I0EN4hdf59dataspace9TypeTraitE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>type trait for dataspace construction </p>
+<p>This trait provides a static function creating a new dataspace for a particular instance of T. To integrate new types just add a specialization of this trait.</p>
+<p><dl class="field-list simple">
+<dt class="field-odd">tparam T</dt>
+<dd class="field-odd"><p>type for which to construct a dataspace </p>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 </section>
@@ -883,6 +1310,11 @@ this function will return false.</p>
 
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspacelsERNSt7ostreamERK4Type">
+<span id="_CPPv3N4hdf59dataspacelsERNSt7ostreamERK4Type"></span><span id="_CPPv2N4hdf59dataspacelsERNSt7ostreamERK4Type"></span><span id="hdf5::dataspace::lshift-operator__osR.TypeCR"></span><span class="target" id="namespacehdf5_1_1dataspace_1ae322fbb017abb57350cdf930fa8445ea"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace4TypeE" title="hdf5::dataspace::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspacelsERNSt7ostreamERK4Type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </section>
 <section id="selectiontype">
 <h3><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">SelectionType</span></code><a class="headerlink" href="#selectiontype" title="Permalink to this headline">¶</a></h3>
@@ -917,6 +1349,11 @@ this function will return false.</p>
 </dd></dl>
 
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspacelsERNSt7ostreamERK13SelectionType">
+<span id="_CPPv3N4hdf59dataspacelsERNSt7ostreamERK13SelectionType"></span><span id="_CPPv2N4hdf59dataspacelsERNSt7ostreamERK13SelectionType"></span><span id="hdf5::dataspace::lshift-operator__osR.SelectionTypeCR"></span><span class="target" id="namespacehdf5_1_1dataspace_1a832ef23049f321788ff357e3c7c9cd04"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace13SelectionTypeE" title="hdf5::dataspace::SelectionType"><span class="n"><span class="pre">SelectionType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspacelsERNSt7ostreamERK13SelectionType" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </section>
 <section id="selectionoperation">
@@ -976,6 +1413,11 @@ this function will return false.</p>
 
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59dataspacelsERNSt7ostreamERK18SelectionOperation">
+<span id="_CPPv3N4hdf59dataspacelsERNSt7ostreamERK18SelectionOperation"></span><span id="_CPPv2N4hdf59dataspacelsERNSt7ostreamERK18SelectionOperation"></span><span id="hdf5::dataspace::lshift-operator__osR.SelectionOperationCR"></span><span class="target" id="namespacehdf5_1_1dataspace_1a474c22b1cb9a27187d5430f1fe92c55f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dataspace</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4hdf59dataspace18SelectionOperationE" title="hdf5::dataspace::SelectionOperation"><span class="n"><span class="pre">SelectionOperation</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4hdf59dataspacelsERNSt7ostreamERK18SelectionOperation" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </section>
 </section>
 </section>
@@ -997,9 +1439,17 @@ this function will return false.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#selection-related-classes-and-functions">Selection related classes and functions</a><ul>
-<li><a class="reference internal" href="#selection"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Selection</span></code></a></li>
+<li><a class="reference internal" href="#selection-and-selectionlist"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Selection</span></code> and <code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">SelectionList</span></code></a></li>
 <li><a class="reference internal" href="#hyperslab"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Hyperslab</span></code></a></li>
 <li><a class="reference internal" href="#points"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Points</span></code></a></li>
+<li><a class="reference internal" href="#selectionmanager"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">SelectionManager</span></code></a></li>
+<li><a class="reference internal" href="#view"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">View</span></code></a></li>
+<li><a class="reference internal" href="#dataspaceholder"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">DataspaceHolder</span></code></a></li>
+<li><a class="reference internal" href="#dataspacepool"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">DataspacePool</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#type-traits">Type traits</a><ul>
+<li><a class="reference internal" href="#typetrait"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TypeTrait</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#enumerations">Enumerations</a><ul>
@@ -1061,10 +1511,10 @@ this function will return false.</p>
         <li class="nav-item nav-item-this"><a href="">Namespace <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">hdf5::dataspace</span></code></a></li> 
       </ul>
     </div>
-<li>generated on 2021-11-26 15:15:23 from  (e1382f8)</li>
+<li>generated on 2022-01-19 10:05:56 from  (d014984)</li>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Deutsches Elektronen-Synchrotron, European Spallation Source ERIC; generated on 2021-11-26 15:15:23 from  (e1382f8).
+        &#169; Copyright 2017, Deutsches Elektronen-Synchrotron, European Spallation Source ERIC; generated on 2022-01-19 10:05:56 from  (d014984).
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.3.
     </div>
 

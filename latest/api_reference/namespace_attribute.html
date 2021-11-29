@@ -50,8 +50,10 @@
             
   <section id="namespace-hdf5-attribute">
 <h1>Namespace <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">hdf5::attribute</span></code><a class="headerlink" href="#namespace-hdf5-attribute" title="Permalink to this headline">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <section id="attribute">
-<h2><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Attribute</span></code><a class="headerlink" href="#attribute" title="Permalink to this headline">¶</a></h2>
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Attribute</span></code><a class="headerlink" href="#attribute" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4hdf59attribute9AttributeE">
 <span id="_CPPv3N4hdf59attribute9AttributeE"></span><span id="_CPPv2N4hdf59attribute9AttributeE"></span><span id="hdf5::attribute::Attribute"></span><span class="target" id="classhdf5_1_1attribute_1_1Attribute"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Attribute</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59attribute9AttributeE" title="Permalink to this definition">¶</a><br /></dt>
@@ -225,7 +227,7 @@
 
 </section>
 <section id="attributemanager">
-<h2><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">AttributeManager</span></code><a class="headerlink" href="#attributemanager" title="Permalink to this headline">¶</a></h2>
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">AttributeManager</span></code><a class="headerlink" href="#attributemanager" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4hdf59attribute16AttributeManagerE">
 <span id="_CPPv3N4hdf59attribute16AttributeManagerE"></span><span id="_CPPv2N4hdf59attribute16AttributeManagerE"></span><span id="hdf5::attribute::AttributeManager"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AttributeManager</span></span></span><a class="headerlink" href="#_CPPv4N4hdf59attribute16AttributeManagerE" title="Permalink to this definition">¶</a><br /></dt>
@@ -310,7 +312,7 @@
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>old_name</strong> – _name the old name of the attribute </p></li>
+<li><p><strong>old_name</strong> – old name of the attribute </p></li>
 <li><p><strong>new_name</strong> – new name of the attribute </p></li>
 </ul>
 </dd>
@@ -420,19 +422,28 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4hdf59attribute16AttributeManager5beginEv">
-<span id="_CPPv3NK4hdf59attribute16AttributeManager5beginEv"></span><span id="_CPPv2NK4hdf59attribute16AttributeManager5beginEv"></span><span id="hdf5::attribute::AttributeManager::beginC"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeManager_1a92dfe7ceb466f162f400e4e8c24d6496"></span><span class="n"><span class="pre">AttributeIterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59attribute16AttributeManager5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4hdf59attribute16AttributeManager5beginEv"></span><span id="_CPPv2NK4hdf59attribute16AttributeManager5beginEv"></span><span id="hdf5::attribute::AttributeManager::beginC"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeManager_1a92dfe7ceb466f162f400e4e8c24d6496"></span><a class="reference internal" href="#_CPPv4N4hdf59attribute17AttributeIteratorE" title="hdf5::attribute::AttributeIterator"><span class="n"><span class="pre">AttributeIterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59attribute16AttributeManager5beginEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>get iterator to first attribute </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4hdf59attribute16AttributeManager3endEv">
-<span id="_CPPv3NK4hdf59attribute16AttributeManager3endEv"></span><span id="_CPPv2NK4hdf59attribute16AttributeManager3endEv"></span><span id="hdf5::attribute::AttributeManager::endC"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeManager_1aa4fda85ae0ac13dbf351ee8f9cfe8414"></span><span class="n"><span class="pre">AttributeIterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59attribute16AttributeManager3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4hdf59attribute16AttributeManager3endEv"></span><span id="_CPPv2NK4hdf59attribute16AttributeManager3endEv"></span><span id="hdf5::attribute::AttributeManager::endC"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeManager_1aa4fda85ae0ac13dbf351ee8f9cfe8414"></span><a class="reference internal" href="#_CPPv4N4hdf59attribute17AttributeIteratorE" title="hdf5::attribute::AttributeIterator"><span class="n"><span class="pre">AttributeIterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4hdf59attribute16AttributeManager3endEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>get iterator to last+1 attribute </p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+<section id="attributeiterator">
+<h3><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">AttributeIterator</span></code><a class="headerlink" href="#attributeiterator" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4hdf59attribute17AttributeIteratorE">
+<span id="_CPPv3N4hdf59attribute17AttributeIteratorE"></span><span id="_CPPv2N4hdf59attribute17AttributeIteratorE"></span><span id="hdf5::attribute::AttributeIterator"></span><span class="target" id="classhdf5_1_1attribute_1_1AttributeIterator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AttributeIterator</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hdf5</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="namespace_hdf5.html#_CPPv4N4hdf58IteratorE" title="hdf5::Iterator"><span class="n"><span class="pre">Iterator</span></span></a><a class="headerlink" href="#_CPPv4N4hdf59attribute17AttributeIteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</section>
 </section>
 </section>
 
@@ -446,8 +457,12 @@
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Namespace <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">hdf5::attribute</span></code></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a><ul>
 <li><a class="reference internal" href="#attribute"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Attribute</span></code></a></li>
 <li><a class="reference internal" href="#attributemanager"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">AttributeManager</span></code></a></li>
+<li><a class="reference internal" href="#attributeiterator"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">AttributeIterator</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -501,10 +516,10 @@
         <li class="nav-item nav-item-this"><a href="">Namespace <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">hdf5::attribute</span></code></a></li> 
       </ul>
     </div>
-<li>generated on 2021-11-26 15:15:23 from  (e1382f8)</li>
+<li>generated on 2022-01-19 10:05:56 from  (d014984)</li>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Deutsches Elektronen-Synchrotron, European Spallation Source ERIC; generated on 2021-11-26 15:15:23 from  (e1382f8).
+        &#169; Copyright 2017, Deutsches Elektronen-Synchrotron, European Spallation Source ERIC; generated on 2022-01-19 10:05:56 from  (d014984).
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.3.
     </div>
 
