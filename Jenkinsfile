@@ -83,11 +83,11 @@ builders = pipeline_builder.createBuilders { container ->
         cmake_prefix = 'CC=/usr/lib64/mpich-3.2/bin/mpicc CXX=/usr/lib64/mpich-3.2/bin/mpicxx'
         break
       case 'debian10':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Debug'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Debug -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       case 'debian10-release':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Release'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Release -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       case 'debian10-release-hdf5-1.12':
@@ -95,23 +95,23 @@ builders = pipeline_builder.createBuilders { container ->
         cmake_prefix = ''
         break
       case 'ubuntu1804':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Debug'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Debug -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       case 'ubuntu1804-release':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Release'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Release -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       case 'ubuntu2004':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Debug'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Debug -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       case 'ubuntu2004-release':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Release'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Release -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
       default:
-        cmake_options = '-DCMAKE_BUILD_TYPE=Debug'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Debug -DH5CPP_CONAN_FILE=conanfile_ess.txt'
         cmake_prefix = ''
         break
     }
