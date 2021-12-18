@@ -154,7 +154,13 @@ The following variables can be set to guide the search for HDF5 libraries and in
   Set ``true`` to skip trying to find ``hdf5-config.cmake``.
 #]=======================================================================]
 
+if(HDF5_FIND_DEBUG)
+  message(STATUS "HDF5 SELECT LIBS")
+endif()
 include(SelectLibraryConfigurations)
+if(HDF5_FIND_DEBUG)
+  message(STATUS "HDF5 FindPackageHandle")
+endif()
 include(FindPackageHandleStandardArgs)
 
 # We haven't found HDF5 yet. Clear its state in case it is set in the parent
