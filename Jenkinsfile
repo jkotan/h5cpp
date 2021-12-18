@@ -91,7 +91,7 @@ builders = pipeline_builder.createBuilders { container ->
         cmake_prefix = ''
         break
       case 'debian10-release-hdf5-1.12':
-        cmake_options = '-DCMAKE_BUILD_TYPE=Release -DH5CPP_CONAN_FILE=conanfile_1.12.0.txt'
+        cmake_options = '-DCMAKE_BUILD_TYPE=Release -DH5CPP_CONAN_FILE=conanfile_1.12.0.txt -DHDF5_FIND_DEBUG=ON'
         cmake_prefix = ''
         break
       case 'ubuntu1804':

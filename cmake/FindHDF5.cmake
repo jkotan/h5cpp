@@ -161,6 +161,9 @@ include(FindPackageHandleStandardArgs)
 # scope somewhere else. We can't rely on it because different components may
 # have been requested for this call.
 set(HDF5_FOUND OFF)
+if(HDF5_FIND_DEBUG)
+  message(STATUS "HDF5 FIND OFF")
+endif()
 
 # List of the valid HDF5 components
 set(HDF5_VALID_LANGUAGE_BINDINGS C CXX Fortran)
