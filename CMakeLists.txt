@@ -77,6 +77,16 @@ endif()
 
 include(${EXTRA_MODULES_DIR}/CompilerConfig.cmake)
 include(${EXTRA_MODULES_DIR}/MPIConfig.cmake)
+
+find_package(Threads REQUIRED)
+find_package(SZIP)
+find_package(ZLIB REQUIRED)
+# Global approach
+if(ZLIB_FOUND)
+   message("ZLIB INCLUDE DIRS: ${ZLIB_INCLUDE_DIRS}")
+   message("ZLIB LIBRARIES: ${ZLIB_LIBRARIES}")
+endif()
+
 include(${EXTRA_MODULES_DIR}/HDF5LibraryConfig.cmake)
 
 if(H5CPP_BUILD_SHARED)
@@ -96,6 +106,11 @@ endif()
 find_package(Threads REQUIRED)
 find_package(SZIP)
 find_package(ZLIB REQUIRED)
+# Global approach
+if(ZLIB_FOUND)
+   message("ZLIB INCLUDE DIRS: ${ZLIB_INCLUDE_DIRS}")
+   message("ZLIB LIBRARIES: ${ZLIB_LIBRARIES}")
+endif()
 
 add_subdirectory(src)
 option(H5CPP_BUILD_DOCS "Build documentation" ON)
