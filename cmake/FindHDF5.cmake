@@ -365,7 +365,6 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
     ERROR_VARIABLE output
     RESULT_VARIABLE return_value
     )
-  message("INVOKE OUTPUT 1  : ${output}")
   if(return_value AND NOT HDF5_FIND_QUIETLY)
     message(STATUS
       "HDF5 ${language} compiler wrapper is unable to compile a minimal HDF5 program.")
@@ -378,7 +377,6 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
       RESULT_VARIABLE return_value
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
-    message("INVOKE OUTPUT 2  : ${output}")
     if(return_value AND NOT HDF5_FIND_QUIETLY)
       message(STATUS
         "Unable to determine HDF5 ${language} flags from HDF5 wrapper.")
@@ -390,7 +388,6 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
       RESULT_VARIABLE return_value
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
-    message("INVOKE OUTPUT 3  : ${config_output}")
     if(return_value AND NOT HDF5_FIND_QUIETLY)
       message(STATUS
         "Unable to determine HDF5 ${language} version_var from HDF5 wrapper.")
@@ -508,12 +505,10 @@ if(NOT HDF5_FOUND AND NOT HDF5_NO_FIND_PACKAGE_CONFIG_FILE)
       )
     if( HDF5_FOUND)
         if(HDF5_FIND_DEBUG)
-          message(STATUS "Found HDF5 at ${HDF5_DIR} via NO_MODULE. Now trying to extract locations etc.")
-	  message(STATUS "HDF5 include dir: ${HDF5_INCLUDE_DIR}")
+            message(STATUS "Found HDF5 at ${HDF5_DIR} via NO_MODULE. Now trying to extract locations etc.")
         endif()
         set(HDF5_IS_PARALLEL ${HDF5_ENABLE_PARALLEL})
         set(HDF5_INCLUDE_DIRS ${HDF5_INCLUDE_DIR})
-	message(STATUS "1) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
         set(HDF5_LIBRARIES)
         if (NOT TARGET hdf5 AND NOT TARGET hdf5-static AND NOT TARGET hdf5-shared)
             # Some HDF5 versions (e.g. 1.8.18) used hdf5::hdf5 etc
@@ -643,12 +638,10 @@ if(NOT HDF5_FOUND)
       if(HDF5_${_lang}_COMPILER_EXECUTABLE)
         _HDF5_invoke_compiler(${_lang} HDF5_${_lang}_COMPILE_LINE
           HDF5_${_lang}_RETURN_VALUE HDF5_${_lang}_VERSION HDF5_${_lang}_IS_PARALLEL)
-	message(STATUS "HDF5: Using hdf5 compile line ${HDF5_C_COMPILE_LINE}")
         if(HDF5_${_lang}_RETURN_VALUE EQUAL 0)
           if(HDF5_FIND_DEBUG)
             message(STATUS "HDF5: Using hdf5 compiler wrapper to determine ${_lang} configuration")
           endif()
-	message(STATUS "a) HDF5  ${_lang} include dirs: ${HDF5_C_INCLUDE_DIRS}")
           _HDF5_parse_compile_line( HDF5_${_lang}_COMPILE_LINE
             HDF5_${_lang}_INCLUDE_DIRS
             HDF5_${_lang}_DEFINITIONS
@@ -656,7 +649,6 @@ if(NOT HDF5_FOUND)
             HDF5_${_lang}_LIBRARY_NAMES
             HDF5_${_lang}_HL_LIBRARY_NAMES
           )
-	message(STATUS "b) HDF5  ${_lang} include dirs: ${HDF5_C_INCLUDE_DIRS}")
           set(HDF5_${_lang}_LIBRARIES)
 
           foreach(_lib IN LISTS HDF5_${_lang}_LIBRARY_NAMES)
@@ -769,16 +761,13 @@ elseif(NOT HDF5_FOUND AND NOT _HDF5_NEED_TO_SEARCH)
   # Compiler wrappers aren't being used by the build but were found and used
   # to determine necessary include and library flags
   set(HDF5_INCLUDE_DIRS)
-  message(STATUS "2a) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
   set(HDF5_LIBRARIES)
   set(HDF5_HL_LIBRARIES)
   foreach(_lang IN LISTS HDF5_LANGUAGE_BINDINGS)
     if(HDF5_${_lang}_FOUND)
       if(NOT HDF5_${_lang}_COMPILER_NO_INTERROGATE)
         list(APPEND HDF5_DEFINITIONS ${HDF5_${_lang}_DEFINITIONS})
-	message(STATUS "2b) HDF5 include dirs ${_lang}: ${HDF5_INCLUDE_DIRS}")
         list(APPEND HDF5_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIRS})
-	message(STATUS "2c) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
         list(APPEND HDF5_LIBRARIES ${HDF5_${_lang}_LIBRARIES})
         if(HDF5_FIND_HL)
           list(APPEND HDF5_HL_LIBRARIES ${HDF5_${_lang}_HL_LIBRARIES})
@@ -792,7 +781,6 @@ elseif(NOT HDF5_FOUND AND NOT _HDF5_NEED_TO_SEARCH)
   if (HDF5_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
   endif()
-  message(STATUS "3) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
   set(HDF5_FOUND TRUE)
   set(HDF5_REQUIRED_VARS HDF5_LIBRARIES)
   if(HDF5_FIND_HL)
@@ -920,7 +908,6 @@ if( NOT HDF5_FOUND )
         # set the _DIRS variable as this is what the user will normally use
         set(HDF5_${_lang}_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIR})
         list(APPEND HDF5_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIR})
-	message(STATUS "4) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
         if(HDF5_FIND_HL)
             foreach(LIB IN LISTS HDF5_${_lang}_HL_LIBRARY_NAMES)
@@ -962,13 +949,12 @@ if( NOT HDF5_FOUND )
         set(HDF5_HL_FOUND TRUE)
     endif()
 
-    if( EXISTS "${HDF5_DEFINITIONS}")
+    if(HDF5_DEFINITIONS)
       list(REMOVE_DUPLICATES HDF5_DEFINITIONS)
     endif()
-    if( EXISTS "${HDF5_INCLUDE_DIRS}")
+    if( HDF5_INCLUDE_DIRS)
       list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
     endif()
-    message(STATUS "5) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
     # If the HDF5 include directory was found, open H5pubconf.h to determine if
     # HDF5 was compiled with parallel IO support
@@ -1016,7 +1002,6 @@ endif()
 if( HDF5_INCLUDE_DIRS )
   set( HDF5_INCLUDE_DIR "${HDF5_INCLUDE_DIRS}" )
 endif()
-message(STATUS "6) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
 # If HDF5_REQUIRED_VARS is empty at this point, then it's likely that
 # something external is trying to explicitly pass already found
