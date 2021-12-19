@@ -505,10 +505,12 @@ if(NOT HDF5_FOUND AND NOT HDF5_NO_FIND_PACKAGE_CONFIG_FILE)
       )
     if( HDF5_FOUND)
         if(HDF5_FIND_DEBUG)
-            message(STATUS "Found HDF5 at ${HDF5_DIR} via NO_MODULE. Now trying to extract locations etc.")
+          message(STATUS "Found HDF5 at ${HDF5_DIR} via NO_MODULE. Now trying to extract locations etc.")
+	  message(STATUS "HDF5 include dir: ${HDF5_INCLUDE_DIR}")
         endif()
         set(HDF5_IS_PARALLEL ${HDF5_ENABLE_PARALLEL})
         set(HDF5_INCLUDE_DIRS ${HDF5_INCLUDE_DIR})
+	message(STATUS "1) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
         set(HDF5_LIBRARIES)
         if (NOT TARGET hdf5 AND NOT TARGET hdf5-static AND NOT TARGET hdf5-shared)
             # Some HDF5 versions (e.g. 1.8.18) used hdf5::hdf5 etc
@@ -768,6 +770,7 @@ elseif(NOT HDF5_FOUND AND NOT _HDF5_NEED_TO_SEARCH)
       if(NOT HDF5_${_lang}_COMPILER_NO_INTERROGATE)
         list(APPEND HDF5_DEFINITIONS ${HDF5_${_lang}_DEFINITIONS})
         list(APPEND HDF5_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIRS})
+	message(STATUS "2) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
         list(APPEND HDF5_LIBRARIES ${HDF5_${_lang}_LIBRARIES})
         if(HDF5_FIND_HL)
           list(APPEND HDF5_HL_LIBRARIES ${HDF5_${_lang}_HL_LIBRARIES})
@@ -781,6 +784,7 @@ elseif(NOT HDF5_FOUND AND NOT _HDF5_NEED_TO_SEARCH)
   if (HDF5_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
   endif()
+  message(STATUS "3) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
   set(HDF5_FOUND TRUE)
   set(HDF5_REQUIRED_VARS HDF5_LIBRARIES)
   if(HDF5_FIND_HL)
@@ -908,6 +912,7 @@ if( NOT HDF5_FOUND )
         # set the _DIRS variable as this is what the user will normally use
         set(HDF5_${_lang}_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIR})
         list(APPEND HDF5_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIR})
+	message(STATUS "4) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
         if(HDF5_FIND_HL)
             foreach(LIB IN LISTS HDF5_${_lang}_HL_LIBRARY_NAMES)
@@ -951,6 +956,7 @@ if( NOT HDF5_FOUND )
 
     list(REMOVE_DUPLICATES HDF5_DEFINITIONS)
     list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
+    message(STATUS "5) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
     # If the HDF5 include directory was found, open H5pubconf.h to determine if
     # HDF5 was compiled with parallel IO support
@@ -998,6 +1004,7 @@ endif()
 if( HDF5_INCLUDE_DIRS )
   set( HDF5_INCLUDE_DIR "${HDF5_INCLUDE_DIRS}" )
 endif()
+message(STATUS "6) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
 # If HDF5_REQUIRED_VARS is empty at this point, then it's likely that
 # something external is trying to explicitly pass already found

@@ -83,8 +83,8 @@ find_package(SZIP)
 find_package(ZLIB REQUIRED)
 # Global approach
 if(ZLIB_FOUND)
-   message("ZLIB INCLUDE DIRS: ${ZLIB_INCLUDE_DIRS}")
-   message("ZLIB LIBRARIES: ${ZLIB_LIBRARIES}")
+   message(STATUS "ZLIB INCLUDE DIRS: ${ZLIB_INCLUDE_DIRS}")
+   message(STATUS "ZLIB LIBRARIES: ${ZLIB_LIBRARIES}")
 endif()
 
 include(${EXTRA_MODULES_DIR}/HDF5LibraryConfig.cmake)
