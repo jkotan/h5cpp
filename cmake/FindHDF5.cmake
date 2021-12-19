@@ -644,6 +644,7 @@ if(NOT HDF5_FOUND)
           if(HDF5_FIND_DEBUG)
             message(STATUS "HDF5: Using hdf5 compiler wrapper to determine ${_lang} configuration")
           endif()
+	message(STATUS "a) HDF5  ${_lang} include dirs: ${HDF5_C_INCLUDE_DIRS}")
           _HDF5_parse_compile_line( HDF5_${_lang}_COMPILE_LINE
             HDF5_${_lang}_INCLUDE_DIRS
             HDF5_${_lang}_DEFINITIONS
@@ -651,6 +652,7 @@ if(NOT HDF5_FOUND)
             HDF5_${_lang}_LIBRARY_NAMES
             HDF5_${_lang}_HL_LIBRARY_NAMES
           )
+	message(STATUS "b) HDF5  ${_lang} include dirs: ${HDF5_C_INCLUDE_DIRS}")
           set(HDF5_${_lang}_LIBRARIES)
 
           foreach(_lib IN LISTS HDF5_${_lang}_LIBRARY_NAMES)
@@ -763,14 +765,16 @@ elseif(NOT HDF5_FOUND AND NOT _HDF5_NEED_TO_SEARCH)
   # Compiler wrappers aren't being used by the build but were found and used
   # to determine necessary include and library flags
   set(HDF5_INCLUDE_DIRS)
+  message(STATUS "2a) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
   set(HDF5_LIBRARIES)
   set(HDF5_HL_LIBRARIES)
   foreach(_lang IN LISTS HDF5_LANGUAGE_BINDINGS)
     if(HDF5_${_lang}_FOUND)
       if(NOT HDF5_${_lang}_COMPILER_NO_INTERROGATE)
         list(APPEND HDF5_DEFINITIONS ${HDF5_${_lang}_DEFINITIONS})
+	message(STATUS "2b) HDF5 include dirs ${_lang}: ${HDF5_INCLUDE_DIRS}")
         list(APPEND HDF5_INCLUDE_DIRS ${HDF5_${_lang}_INCLUDE_DIRS})
-	message(STATUS "2) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
+	message(STATUS "2c) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
         list(APPEND HDF5_LIBRARIES ${HDF5_${_lang}_LIBRARIES})
         if(HDF5_FIND_HL)
           list(APPEND HDF5_HL_LIBRARIES ${HDF5_${_lang}_HL_LIBRARIES})
