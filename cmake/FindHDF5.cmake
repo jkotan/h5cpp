@@ -365,6 +365,7 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
     ERROR_VARIABLE output
     RESULT_VARIABLE return_value
     )
+  message("INVOKE OUTPUT 1  : ${output}")
   if(return_value AND NOT HDF5_FIND_QUIETLY)
     message(STATUS
       "HDF5 ${language} compiler wrapper is unable to compile a minimal HDF5 program.")
@@ -377,6 +378,7 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
       RESULT_VARIABLE return_value
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
+    message("INVOKE OUTPUT 2  : ${output}")
     if(return_value AND NOT HDF5_FIND_QUIETLY)
       message(STATUS
         "Unable to determine HDF5 ${language} flags from HDF5 wrapper.")
@@ -388,6 +390,7 @@ function( _HDF5_invoke_compiler language output_var return_value_var version_var
       RESULT_VARIABLE return_value
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
+    message("INVOKE OUTPUT 3  : ${config_output}")
     if(return_value AND NOT HDF5_FIND_QUIETLY)
       message(STATUS
         "Unable to determine HDF5 ${language} version_var from HDF5 wrapper.")
@@ -640,6 +643,7 @@ if(NOT HDF5_FOUND)
       if(HDF5_${_lang}_COMPILER_EXECUTABLE)
         _HDF5_invoke_compiler(${_lang} HDF5_${_lang}_COMPILE_LINE
           HDF5_${_lang}_RETURN_VALUE HDF5_${_lang}_VERSION HDF5_${_lang}_IS_PARALLEL)
+	message(STATUS "HDF5: Using hdf5 compile line ${HDF5_C_COMPILE_LINE}")
         if(HDF5_${_lang}_RETURN_VALUE EQUAL 0)
           if(HDF5_FIND_DEBUG)
             message(STATUS "HDF5: Using hdf5 compiler wrapper to determine ${_lang} configuration")
