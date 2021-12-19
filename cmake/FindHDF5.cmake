@@ -154,22 +154,13 @@ The following variables can be set to guide the search for HDF5 libraries and in
   Set ``true`` to skip trying to find ``hdf5-config.cmake``.
 #]=======================================================================]
 
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 SELECT LIBS")
-endif()
 include(SelectLibraryConfigurations)
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 FindPackageHandle")
-endif()
 include(FindPackageHandleStandardArgs)
 
 # We haven't found HDF5 yet. Clear its state in case it is set in the parent
 # scope somewhere else. We can't rely on it because different components may
 # have been requested for this call.
 set(HDF5_FOUND OFF)
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 FIND OFF")
-endif()
 
 # List of the valid HDF5 components
 set(HDF5_VALID_LANGUAGE_BINDINGS C CXX Fortran)
@@ -209,9 +200,6 @@ else()
   endif()
   list(REMOVE_ITEM HDF5_FIND_COMPONENTS Fortran_HL) # replaced by Fortran and HL
   list(REMOVE_DUPLICATES HDF5_LANGUAGE_BINDINGS)
-endif()
-if(HDF5_FIND_DEBUG)
-  message(STATUS "Language bindings: ${HDF5_LANGUAGE_BINDINGS}")
 endif()
 
 # Determine whether to search for serial or parallel executable first
@@ -509,10 +497,6 @@ else()
     set(_HDF5_SEARCH_OPTS)
 endif()
 
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 Search options: ${_HDF5_SEARCH_OPTS} , ${HDF5_FOUND} , ${HDF5_NO_FIND_PACKAGE_CONFIG_FILE}")
-endif()
-
 # Try to find HDF5 using an installed hdf5-config.cmake
 if(NOT HDF5_FOUND AND NOT HDF5_NO_FIND_PACKAGE_CONFIG_FILE)
     find_package(HDF5 QUIET NO_MODULE
@@ -595,10 +579,6 @@ if(NOT HDF5_FOUND AND NOT HDF5_NO_FIND_PACKAGE_CONFIG_FILE)
             unset(_hdf5_lang_location)
         endforeach()
     endif()
-endif()
-
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 and HL Found:  ${HDF5_FOUND}   ${HDF5_HL_FOUND} ")
 endif()
 
 if(NOT HDF5_FOUND)
@@ -771,9 +751,6 @@ if(NOT HDF5_FOUND)
 else()
   set(_HDF5_NEED_TO_SEARCH TRUE)
 endif()
-if(HDF5_FIND_DEBUG)
-  message(STATUS "HDF5 Found and compiler:  ${HDF5_FOUND} ,  ${HDF5_COMPILER_NO_INTERROGATE} ")
-endif()
 
 if(NOT HDF5_FOUND AND HDF5_COMPILER_NO_INTERROGATE)
   # No arguments necessary, all languages can use the compiler wrappers
@@ -819,9 +796,6 @@ find_program( HDF5_DIFF_EXECUTABLE
     DOC "HDF5 file differencing tool." )
 mark_as_advanced( HDF5_DIFF_EXECUTABLE )
 
-if(HDF5_FIND_DEBUG)
-  message(STATUS "PROG HDF5 Found:  ${HDF5_FOUND} ")
-endif()
 if( NOT HDF5_FOUND )
     # seed the initial lists of libraries to find with items we know we need
     set(HDF5_C_LIBRARY_NAMES          hdf5)
@@ -1039,10 +1013,6 @@ find_package_handle_standard_args(HDF5
 )
 
 unset(_HDF5_SEARCH_OPTS)
-
-if(HDF5_FIND_DEBUG)
-  message(STATUS "PROG HDF5 Found and DIR:  ${HDF5_FOUND} , ${HDF5_DIR}")
-endif()
 
 if( HDF5_FOUND AND NOT HDF5_DIR)
   # hide HDF5_DIR for the non-advanced user to avoid confusion with
