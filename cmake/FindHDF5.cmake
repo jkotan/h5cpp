@@ -962,8 +962,11 @@ if( NOT HDF5_FOUND )
         set(HDF5_HL_FOUND TRUE)
     endif()
 
-    list(REMOVE_DUPLICATES HDF5_DEFINITIONS)
-    list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
+    if( EXISTS "${HDF5_DEFINITIONS}")
+      list(REMOVE_DUPLICATES HDF5_DEFINITIONS)
+    if( EXISTS "${HDF5_INCLUDE_DIRS}")
+      list(REMOVE_DUPLICATES HDF5_INCLUDE_DIRS)
+    endif()
     message(STATUS "5) HDF5 include dirs: ${HDF5_INCLUDE_DIRS}")
 
     # If the HDF5 include directory was found, open H5pubconf.h to determine if
