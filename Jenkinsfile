@@ -119,7 +119,6 @@ builders = pipeline_builder.createBuilders { container ->
     container.sh """
       cd build
       cmake --version
-      mkdir -p /conan/.conan/data/zlib/1.2.11/conan/stable/package/53879f7dc88eab399f085931f012206f509ec912/include
       ${cmake_prefix} cmake ${cmake_options} ../${pipeline_builder.project}
     """
   }  // stage
