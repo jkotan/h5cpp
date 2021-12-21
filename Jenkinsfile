@@ -352,7 +352,7 @@ def get_win10_pipeline()
                 try {
                     checkout scm
                     bat "mkdir _build"
-                    bat "pip3 --proxy=${http_proxy} install --user conan --upgrade"
+                    bat "pip3 install --user conan --upgrade"
                 } catch (e) {
                     failure_function(e, 'Windows10 / Checkout failed')
                 }
