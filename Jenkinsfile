@@ -119,6 +119,7 @@ builders = pipeline_builder.createBuilders { container ->
     container.sh """
       cd build
       cmake --version
+      export CONAN_REVISIONS_ENABLED=1
       ${cmake_prefix} cmake ${cmake_options} ../${pipeline_builder.project}
     """
   }  // stage
