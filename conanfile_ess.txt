@@ -4,7 +4,7 @@ hdf5/1.10.6
 zlib/1.2.11
 bzip2/1.0.8
 doxygen/1.8.20
-bison/3.7.6@conan/448fa7d0feeabb38324eda4681892f81
+bison/3.7.6@conan/stable#448fa7d0feeabb38324eda4681892f81
 
 [generators]
 cmake_paths
