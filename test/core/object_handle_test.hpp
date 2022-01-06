@@ -75,7 +75,7 @@ class FileObjectHandleTest : public ObjectHandleTest
   std::string filename_{};
  public:
   FileObjectHandleTest(const std::string &filename);
-  ~FileObjectHandleTest();
+  ~FileObjectHandleTest() override;
 
   virtual hid_t create_object() override;
 };
@@ -115,7 +115,7 @@ class DatasetObjectHandleTest : public ObjectHandleTest
   hdf5::ObjectHandle dspace_;
  public:
   DatasetObjectHandleTest(const std::string &filename);
-  ~DatasetObjectHandleTest();
+  ~DatasetObjectHandleTest() override;
 
   virtual hid_t create_object() override;
 };
@@ -128,7 +128,7 @@ class AttributeObjectHandleTest : public ObjectHandleTest
   hdf5::ObjectHandle group_;
  public:
   AttributeObjectHandleTest(const std::string &filename);
-  ~AttributeObjectHandleTest();
+  ~AttributeObjectHandleTest() override;
 
   virtual hid_t create_object() override;
 };
