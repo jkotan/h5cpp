@@ -86,11 +86,11 @@ SCENARIO("testing dataset access via chunks") {
 
   UShorts sframe(sxdim);
   for (size_t i = 0; i != sxdim; i++)
-    sframe[i] = static_cast<int>(i / 2);
+    sframe[i] = static_cast<unsigned short>(i / 2);
 
   UShorts tframe(sxdim);
   for (size_t i = 0; i != sxdim; i++)
-    tframe[i] = static_cast<int>(i / 4);
+    tframe[i] = static_cast<unsigned short>(i / 4);
 
   GIVEN("an integer dataset") {
     node::Dataset dataset(root, "data1", datatype::create<unsigned short int>(),
