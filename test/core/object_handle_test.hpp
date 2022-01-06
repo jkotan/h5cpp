@@ -29,6 +29,7 @@
 #include <h5cpp/core/object_handle.hpp>
 
 #include <h5cpp/core/hdf5_capi.hpp>
+#include <h5cpp/property/property_list.hpp>
 
 class TestEnvironment
 {

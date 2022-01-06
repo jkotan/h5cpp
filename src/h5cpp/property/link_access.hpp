@@ -33,6 +33,10 @@
 namespace hdf5 {
 namespace property {
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wweak-vtables"
+#endif
 //!
 //! \brief link access property list
 //!
@@ -99,6 +103,10 @@ class DLL_EXPORT LinkAccessList : public List {
 #pragma warning(pop)
 #endif
 };
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 } // namespace property
 } // namespace hdf5

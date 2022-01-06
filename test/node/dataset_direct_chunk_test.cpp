@@ -137,7 +137,7 @@ TEST_F(DatasetDirectChunkTest, read_chunk) {
   for (long long unsigned int i = 0; i != nframe; i++) {
     filter_mask = data2.read_chunk(read_value, {i, 0, 0});
     EXPECT_EQ(frame, read_value);
-    EXPECT_EQ(filter_mask, H5P_DEFAULT);
+    EXPECT_EQ(filter_mask, property::kDefault);
   }
 }
 
@@ -185,7 +185,7 @@ TEST_F(DatasetDirectChunkTest, read_chunk_deflate) {
       EXPECT_EQ(tcpvalue, tread_value);
     }
 
-    EXPECT_EQ(filter_mask, H5P_DEFAULT);
+    EXPECT_EQ(filter_mask, property::kDefault);
   }
 }
 */
