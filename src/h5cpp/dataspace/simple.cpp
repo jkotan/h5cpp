@@ -78,7 +78,7 @@ Dimensions Simple::current_dimensions() const {
   }
 
   Dimensions dims(my_rank);
-  if (H5Sget_simple_extent_dims(static_cast<hid_t>(*this), dims.data(), NULL) < 0) {
+  if (H5Sget_simple_extent_dims(static_cast<hid_t>(*this), dims.data(), nullptr) < 0) {
     error::Singleton::instance().throw_with_stack("Could not retrieve current dimensions for Simple dataspace");
   }
   return dims;
@@ -94,7 +94,7 @@ Dimensions Simple::maximum_dimensions() const {
   }
 
   Dimensions dims(my_rank);
-  if (H5Sget_simple_extent_dims(static_cast<hid_t>(*this), NULL, dims.data()) < 0) {
+  if (H5Sget_simple_extent_dims(static_cast<hid_t>(*this), nullptr, dims.data()) < 0) {
     error::Singleton::instance().throw_with_stack("Could not retrieve maximum dimensions for Simple dataspace");
   }
   return dims;

@@ -63,7 +63,7 @@ void Descriptor::extract_strings()
   ssize_t    message_size = 0;
 
   // retrieve the major error message
-  message_size = H5Eget_msg(maj_num,&message_type,NULL,0);
+  message_size = H5Eget_msg(maj_num,&message_type,nullptr,0);
   if(message_size > 0 && message_type == H5E_MAJOR)
   {
     std::vector<char> message_buffer(message_size+1);
@@ -72,7 +72,7 @@ void Descriptor::extract_strings()
   }
 
   // retrieve the minor error message
-  message_size = H5Eget_msg(min_num,&message_type,NULL,0);
+  message_size = H5Eget_msg(min_num,&message_type,nullptr,0);
   if(message_size > 0 && message_type == H5E_MINOR)
   {
     std::vector<char> message_buffer(message_size+1);

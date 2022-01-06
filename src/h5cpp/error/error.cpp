@@ -40,8 +40,8 @@ namespace error {
 void Singleton::auto_print(bool enable)
 {
   herr_t ret = H5Eset_auto2(H5E_DEFAULT,
-                            enable ? reinterpret_cast<H5E_auto2_t>(H5Eprint2) : NULL,
-                            enable ? stderr : NULL);
+                            enable ? reinterpret_cast<H5E_auto2_t>(H5Eprint2) : nullptr,
+                            enable ? stderr : nullptr);
 
   if (0 > ret)
   {
@@ -130,15 +130,15 @@ void Singleton::clear_stack()
 
 bool Singleton::auto_print_enabled() const
 {
-  H5E_auto2_t func = NULL;
-  herr_t ret = H5Eget_auto2(H5E_DEFAULT, &func, NULL);
+  H5E_auto2_t func = nullptr;
+  herr_t ret = H5Eget_auto2(H5E_DEFAULT, &func, nullptr);
 
   if (0 > ret)
   {
     throw std::runtime_error("Could not determine automatic error printing settings");
   }
 
-  return (func != NULL);
+  return (func != nullptr);
 }
 
 herr_t Singleton::to_list(unsigned n,

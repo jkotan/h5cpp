@@ -113,7 +113,7 @@ void DatasetCreationList::chunk(const Dimensions &chunk_dims) const {
 }
 
 Dimensions DatasetCreationList::chunk() const {
-  int s = H5Pget_chunk(static_cast<hid_t>(*this), 0, NULL);
+  int s = H5Pget_chunk(static_cast<hid_t>(*this), 0, nullptr);
   if (s < 0) {
     error::Singleton::instance().throw_with_stack("Failure retrieving the chunk rank!");
   }

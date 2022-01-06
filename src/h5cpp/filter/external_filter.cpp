@@ -100,7 +100,7 @@ const std::vector<Availability> ExternalFilters::fill(const property::DatasetCre
 			      cd_values.data(),
 			      fname.size(),
 			      fname.data(),
-			      NULL);
+			      nullptr);
     if(filter_id < 0)
     {
       std::stringstream ss;

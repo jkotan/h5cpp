@@ -64,7 +64,7 @@ size_t File::size() const
 
 ssize_t File::buffer_size() const
 {
-  ssize_t s = H5Fget_file_image(static_cast<hid_t>(*this), NULL, 0);
+  ssize_t s = H5Fget_file_image(static_cast<hid_t>(*this), nullptr, 0);
   if (s < 0)
     {
       error::Singleton::instance().throw_with_stack("Failure retrieving the buffer size");
@@ -103,7 +103,7 @@ void File::close()
 
 fs::path File::path() const
 {
-  ssize_t size = H5Fget_name(static_cast<hid_t>(*this), NULL, 0);
+  ssize_t size = H5Fget_name(static_cast<hid_t>(*this), nullptr, 0);
 
   if (size < 0)
   {

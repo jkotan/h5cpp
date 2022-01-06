@@ -192,7 +192,7 @@ AttributeIterator AttributeManager::begin() const
 
 AttributeIterator AttributeManager::end() const
 {
-  return AttributeIterator(*this,size());
+  return AttributeIterator(*this,unsigned2signed<ssize_t>(size()));
 }
 
 } // namespace attribute
