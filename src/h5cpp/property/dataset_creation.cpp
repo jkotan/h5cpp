@@ -27,6 +27,7 @@
 //
 #include <h5cpp/property/property_class.hpp>
 #include <h5cpp/property/dataset_creation.hpp>
+#include <h5cpp/core/utilities.hpp>
 
 namespace hdf5 {
 namespace property {
@@ -118,7 +119,7 @@ Dimensions DatasetCreationList::chunk() const {
     error::Singleton::instance().throw_with_stack("Failure retrieving the chunk rank!");
   }
 
-  Dimensions buffer(s);
+  Dimensions buffer(signed2unsigned<size_t>(s));
   if (H5Pget_chunk(static_cast<hid_t>(*this), s, buffer.data()) < 0) {
     error::Singleton::instance().throw_with_stack("Failure retrieving the chunk dimension!");
   }

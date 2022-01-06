@@ -78,7 +78,7 @@ std::string Attribute::name() const
 
   std::string buffer(signed2unsigned<size_t>(ssize),' ');
   char *ptr = const_cast<char*>(buffer.data());
-  if(H5Aget_name(static_cast<hid_t>(handle_),ssize+1,ptr)<0)
+  if(H5Aget_name(static_cast<hid_t>(handle_),signed2unsigned<size_t>(ssize+1),ptr)<0)
   {
     error::Singleton::instance().throw_with_stack("Failure retrieving the attributes name!");
   }

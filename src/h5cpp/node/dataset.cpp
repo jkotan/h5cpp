@@ -33,6 +33,7 @@
 #include <h5cpp/node/functions.hpp>
 #include <h5cpp/filter/external_filter.hpp>
 #include <h5cpp/error/error.hpp>
+#include <h5cpp/core/utilities.hpp>
 
 namespace hdf5 {
 namespace node {
@@ -258,7 +259,7 @@ void resize_by(const Dataset &dataset,size_t dimension_index,ssize_t delta)
 #pragma GCC diagnostic pop
 #endif
 
-  current_dims[dimension_index] += delta;
+  current_dims[dimension_index] += signed2unsigned<unsigned long long>(delta);
   dataset.resize(current_dims);
 }
 

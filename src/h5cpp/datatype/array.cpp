@@ -77,7 +77,7 @@ size_t Array::rank() const {
   if (ndims < 0) {
     error::Singleton::instance().throw_with_stack("Could not obtain rank for Array datatype!");
   }
-  return ndims;
+  return signed2unsigned<size_t>(ndims);
 }
 
 VLengthArray::VLengthArray(ObjectHandle &&handle) :

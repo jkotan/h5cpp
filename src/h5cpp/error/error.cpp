@@ -87,7 +87,7 @@ void Singleton::throw_with_stack(const std::string& message)
   throw std::runtime_error(message);
 }
 
-std::string print_nested(const std::exception& exception, int level)
+std::string print_nested(const std::exception& exception, size_t level)
 {
   std::stringstream ss;
   ss << std::string(level, ' ') << exception.what() << '\n';

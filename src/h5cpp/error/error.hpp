@@ -134,7 +134,7 @@ class DLL_EXPORT Singleton
 //!
 //! \param level indentation level
 //!
-std::string DLL_EXPORT print_nested(const std::exception& exception, int level =  0);
+std::string DLL_EXPORT print_nested(const std::exception& exception, size_t level =  0);
 
 
 } // namespace file

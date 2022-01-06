@@ -58,7 +58,6 @@ class DLL_EXPORT ExternalFilter : public Filter
                    const std::vector<unsigned int> cd_values,
                    const std::string &name=std::string());
     ExternalFilter();
-    ~ExternalFilter() override;
 
     //!
     //! \brief apply filter

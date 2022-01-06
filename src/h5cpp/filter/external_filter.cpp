@@ -56,9 +56,6 @@ ExternalFilter::ExternalFilter():
 {
 }
 
-ExternalFilter::~ExternalFilter()
-{}
-
 
 void ExternalFilter::operator()(const property::DatasetCreationList &dcpl,
                          Availability flag) const
