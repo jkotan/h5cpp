@@ -41,6 +41,10 @@ namespace filter {
 //!
 DLL_EXPORT bool is_filter_available(FilterID id);
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
 
 class DLL_EXPORT ExternalFilter : public Filter
 {
@@ -100,6 +104,10 @@ class DLL_EXPORT ExternalFilter : public Filter
 #pragma warning(pop)
 #endif
 };
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 #ifdef _MSC_VER
 #pragma warning(push)

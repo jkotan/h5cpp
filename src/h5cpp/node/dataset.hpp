@@ -52,6 +52,7 @@ class Selection;
 
 #ifdef __clang__
 #pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
 #pragma clang diagnostic ignored "-Wweak-vtables"
 #endif
 class DLL_EXPORT Dataset : public Node

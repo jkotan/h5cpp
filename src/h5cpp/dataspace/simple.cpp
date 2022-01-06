@@ -29,8 +29,17 @@
 
 namespace hdf5 {
 namespace dataspace {
-  
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#endif
+
 const hsize_t Simple::unlimited = H5S_UNLIMITED;
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 Simple::Simple() :
     Dataspace(Type::Simple) {}
