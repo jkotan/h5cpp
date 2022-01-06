@@ -57,7 +57,7 @@ Compound Compound::create(size_t size) {
 
 
 Datatype Compound::operator[](size_t index) const {
-  hid_t id = H5Tget_member_type(static_cast<hid_t>(*this), unsigned2signed<int>(index));
+  hid_t id = H5Tget_member_type(static_cast<hid_t>(*this), static_cast<unsigned int>(index));
 
   if (id < 0) {
     std::stringstream ss;
@@ -83,7 +83,7 @@ size_t Compound::field_index(const std::string &name) const {
 
 // implementation same as for Enum
 std::string Compound::field_name(size_t index) const {
-  char *buffer = H5Tget_member_name(static_cast<hid_t>(*this), unsigned2signed<int>(index));
+  char *buffer = H5Tget_member_name(static_cast<hid_t>(*this), static_cast<unsigned int>(index));
   if (buffer == NULL) {
     std::stringstream ss;
     ss << "Failure to obtain name of field [" << index << "] in compound data type!";
