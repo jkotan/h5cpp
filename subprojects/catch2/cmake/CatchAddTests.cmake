@@ -32,6 +32,7 @@ if(NOT EXISTS "${TEST_EXECUTABLE}")
     "Specified test executable '${TEST_EXECUTABLE}' does not exist"
   )
 endif()
+message(WARNING "JA EXEC:  ${TEST_EXECUTOR} AND: ${TEST_EXECUTABLE}")
 execute_process(
   COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
   OUTPUT_VARIABLE output
@@ -39,6 +40,8 @@ execute_process(
   WORKING_DIRECTORY "${TEST_WORKING_DIR}"
 )
 # Catch --list-test-names-only reports the number of tests, so 0 is... surprising
+message(WARNING "JA RESULT:  ${result} ")
+message(WARNING "JA OUTPUT:  ${output} ")
 if(${result} EQUAL 0)
   message(WARNING
     "Test executable '${TEST_EXECUTABLE}' contains no tests!\n"
