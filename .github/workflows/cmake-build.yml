@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 jobs:
-  conan:
+  ubuntu:
     strategy:
       matrix:
         shared: [shared, static]
@@ -127,7 +127,7 @@ jobs:
         run: |
           cd build
           .\activate_run.ps1
-          ctest --extra-verbose
+          cmake --build . --config Release --target RUN_TESTS
         shell: pwsh
   macos-10:
     strategy:
@@ -243,4 +243,4 @@ jobs:
       - name: run tests
         run: |
           cd build
-          cmake --build . --config Release --target RUN_TESTS
+          ctest --extra-verbose

@@ -133,7 +133,6 @@ if(NOT H5CPP_DISABLE_TESTS)
     enable_testing()
     include(Catch)
     add_subdirectory(test)
-    message("ADDING TESTS: ${test}")
 endif()
 
 #=============================================================================
