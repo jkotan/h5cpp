@@ -130,9 +130,10 @@ install(DIRECTORY examples
 option(H5CPP_DISABLE_TESTS "Disable building unit tests" OFF)
 if(NOT H5CPP_DISABLE_TESTS)
     find_package(Catch2 REQUIRED)
+    enable_testing()
     include(Catch)
     add_subdirectory(test)
-    enable_testing()
+    message("ADDING TESTS: ${test}")
 endif()
 
 #=============================================================================
