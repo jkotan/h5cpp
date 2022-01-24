@@ -127,6 +127,7 @@ jobs:
         run: |
           cd build
           .\activate_run.ps1
+          Get-ChildItem -Path . -Recurse -Force
           ctest --extra-verbose
         shell: pwsh
   macos-10:
