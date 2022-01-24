@@ -12,7 +12,6 @@ endif ()
 include_directories(${PROJECT_SOURCE_DIR}/src
                     ${HDF5_INCLUDE_DIRS}
                     ${PROJECT_SOURCE_DIR}/subprojects/catch2/include)
-)
 
 configure_file(h5py_test_data.h5 h5py_test_data.h5 COPYONLY)
 configure_file(h5py_test_boolattr.h5 h5py_test_boolattr.h5 COPYONLY)
