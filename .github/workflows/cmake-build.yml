@@ -127,7 +127,7 @@ jobs:
         run: |
           cd build
           .\activate_run.ps1
-          cmake --build . --config Release --target RUN_TESTS
+          ctest --extra-verbose
         shell: pwsh
   macos-10:
     strategy:
