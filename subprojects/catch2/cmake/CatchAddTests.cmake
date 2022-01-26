@@ -46,14 +46,25 @@ message(WARNING "JA RESULT:  ${result} ")
 message(WARNING "JA OUTPUT:  ${output} ")
 message(WARNING "JA ERROR:  ${errorvar} ")
 execute_process(
-  COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
-  OUTPUT_VARIABLE output
-  RESULT_VARIABLE result
-  ERROR_VARIABLE errorvar
+  COMMAND "${TEST_EXECUTOR} ${TEST_EXECUTABLE} ${spec} --list-test-names-only"
+  OUTPUT_VARIABLE output2
+  RESULT_VARIABLE result2
+  ERROR_VARIABLE errorvar2
+  WORKING_DIRECTORY "${TEST_WORKING_DIR}"
 )
-message(WARNING "JA2 RESULT:  ${result} ")
-message(WARNING "JA2 OUTPUT:  ${output} ")
-message(WARNING "JA2 ERROR:  ${errorvar} ")
+message(WARNING "JA2 RESULT:  ${result2} ")
+message(WARNING "JA2 OUTPUT:  ${output2} ")
+message(WARNING "JA2 ERROR:  ${errorvar2} ")
+execute_process(
+  COMMAND "dumpbin /dependents  ${TEST_EXECUTABLE}"
+  OUTPUT_VARIABLE output3
+  RESULT_VARIABLE result3
+  ERROR_VARIABLE errorvar3
+  WORKING_DIRECTORY "${TEST_WORKING_DIR}"
+)
+message(WARNING "JA3 RESULT:  ${result3} ")
+message(WARNING "JA3 OUTPUT:  ${output3} ")
+message(WARNING "JA3 ERROR:  ${errorvar3} ")
 if(${result} EQUAL 0)
   message(WARNING
     "Test executable '${TEST_EXECUTABLE}' contains no tests!\n"
