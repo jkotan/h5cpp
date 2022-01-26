@@ -33,6 +33,7 @@ if(NOT EXISTS "${TEST_EXECUTABLE}")
   )
 endif()
 message(WARNING "JA EXEC:  ${TEST_EXECUTOR} AND: ${TEST_EXECUTABLE}")
+message(WARNING "JA SPEC:  ${spec} AND: ${TEST_WORKING_DIR}")
 execute_process(
   COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
   OUTPUT_VARIABLE output
