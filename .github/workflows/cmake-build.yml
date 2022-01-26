@@ -122,7 +122,6 @@ jobs:
             --generator virtualrunenv
       - name: build with cmake
         run: |
-          Get-ChildItem Env:Path
           conan build . --build-folder build
       - name: run tests
         run: |
