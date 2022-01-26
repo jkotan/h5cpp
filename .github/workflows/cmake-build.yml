@@ -122,11 +122,14 @@ jobs:
             --generator virtualrunenv
       - name: build with cmake
         run: |
+          .\activate_run.ps1
+          Get-ChildItem Env:Path
           conan build . --build-folder build
       - name: run tests
         run: |
           cd build
           .\activate_run.ps1
+          Get-ChildItem Env:Path
           Get-ChildItem -Path . -Recurse -Force
           bin\attribute_test.exe --list-test-names-only
           bin\core_test.exe --list-test-names-only
