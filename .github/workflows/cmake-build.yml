@@ -124,6 +124,7 @@ jobs:
         run: |
           build\\activate_run.ps1
           conan build . --build-folder build
+        shell: pwsh
       - name: run tests
         run: |
           cd build
