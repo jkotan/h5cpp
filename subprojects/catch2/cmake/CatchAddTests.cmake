@@ -46,7 +46,7 @@ message(WARNING "JA RESULT:  ${result} ")
 message(WARNING "JA OUTPUT:  ${output} ")
 message(WARNING "JA ERROR:  ${errorvar} ")
 execute_process(
-  COMMAND "${TEST_EXECUTOR} ${TEST_EXECUTABLE} ${spec} --list-test-names-only"
+  COMMAND dumpbin /dependents "${TEST_EXECUTABLE}"
   OUTPUT_VARIABLE output2
   RESULT_VARIABLE result2
   ERROR_VARIABLE errorvar2
@@ -56,7 +56,7 @@ message(WARNING "JA2 RESULT:  ${result2} ")
 message(WARNING "JA2 OUTPUT:  ${output2} ")
 message(WARNING "JA2 ERROR:  ${errorvar2} ")
 execute_process(
-  COMMAND "dumpbin /dependents  ${TEST_EXECUTABLE}"
+  COMMAND dumpbin /imports "${TEST_EXECUTABLE}"
   OUTPUT_VARIABLE output3
   RESULT_VARIABLE result3
   ERROR_VARIABLE errorvar3
