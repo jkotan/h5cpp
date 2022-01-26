@@ -122,7 +122,7 @@ jobs:
             --generator virtualrunenv
       - name: build with cmake
         run: |
-          build\activate_run.ps1
+          build\\activate_run.ps1
           conan build . --build-folder build
       - name: run tests
         run: |
