@@ -35,6 +35,26 @@ endif()
 message(WARNING "JA EXEC:  ${TEST_EXECUTOR} AND: ${TEST_EXECUTABLE}")
 message(WARNING "JA SPEC:  ${spec} AND: ${TEST_WORKING_DIR}")
 execute_process(
+  COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} -t
+  OUTPUT_VARIABLE output0
+  RESULT_VARIABLE result0
+  ERROR_VARIABLE errorvar0
+)
+# Catch --list-test-names-only reports the number of tests, so 0 is... surprising
+message(WARNING "JA RESULT0:  ${result0} ")
+message(WARNING "JA OUTPUT0:  ${output0} ")
+message(WARNING "JA ERROR0:  ${errorvar0} ")
+execute_process(
+  COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} -l
+  OUTPUT_VARIABLE output1
+  RESULT_VARIABLE result1
+  ERROR_VARIABLE errorvar1
+)
+# Catch --list-test-names-only reports the number of tests, so 0 is... surprising
+message(WARNING "JA RESULT1:  ${result1} ")
+message(WARNING "JA OUTPUT1:  ${output1} ")
+message(WARNING "JA ERROR1:  ${errorvar1} ")
+execute_process(
   COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
   OUTPUT_VARIABLE output
   RESULT_VARIABLE result
