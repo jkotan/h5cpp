@@ -38,11 +38,22 @@ execute_process(
   COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
   OUTPUT_VARIABLE output
   RESULT_VARIABLE result
+  ERROR_VARIABLE errorvar
   WORKING_DIRECTORY "${TEST_WORKING_DIR}"
 )
 # Catch --list-test-names-only reports the number of tests, so 0 is... surprising
 message(WARNING "JA RESULT:  ${result} ")
 message(WARNING "JA OUTPUT:  ${output} ")
+message(WARNING "JA ERROR:  ${errorvar} ")
+execute_process(
+  COMMAND ${TEST_EXECUTOR} "${TEST_EXECUTABLE}" ${spec} --list-test-names-only
+  OUTPUT_VARIABLE output
+  RESULT_VARIABLE result
+  ERROR_VARIABLE errorvar
+)
+message(WARNING "JA2 RESULT:  ${result} ")
+message(WARNING "JA2 OUTPUT:  ${output} ")
+message(WARNING "JA2 ERROR:  ${errorvar} ")
 if(${result} EQUAL 0)
   message(WARNING
     "Test executable '${TEST_EXECUTABLE}' contains no tests!\n"
