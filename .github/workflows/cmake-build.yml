@@ -161,9 +161,11 @@ jobs:
             -o shared=${H5CPP_SHARED} \
             -o hdf5/*:shared=${H5CPP_SHARED}"
           dir build
+          build\conanbuildenv-release-x86_64.ps1
+          build\conanrunenv-release-x86_64.ps1
           conan build . ${CONAN_ARGS} \
             --lockfile conan.lock \
-            --output-folder build
+            --output-folder build -vvv
       - name: run tests
         run: |
           cd build
