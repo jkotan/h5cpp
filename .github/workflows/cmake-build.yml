@@ -156,8 +156,6 @@ jobs:
             --generator VirtualRunEnv
       - name: build with cmake
         run: |
-          .build\conanbuildenv-release-x86_64.ps1
-          .build\conanrunenv-release-x86_64.ps1
           CONAN_ARGS="--profile .github/workflows/conan/profiles/vs2019 \
             -o with_boost=${H5CPP_WITH_BOOST} \
             -o shared=${H5CPP_SHARED} \
