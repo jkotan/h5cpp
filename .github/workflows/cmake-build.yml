@@ -171,11 +171,11 @@ jobs:
           dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC"
           dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools"
           dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.30.30705"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.30.30705\bin"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.30.30705\bin\HostX64"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.30.30705\bin\HostX64\x86"
-          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.30.30705\bin\HostX64\x86\dumpbin.exe" /imports .\bin\attribute_test.exe
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215"
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin"
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64"
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86"
+          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86\dumpbin.exe" /imports .\bin\attribute_test.exe
           .\bin\attribute_test.exe
           .\bin\core_test.exe
           .\bin\dataspace_test.exe
