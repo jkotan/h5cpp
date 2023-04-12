@@ -69,11 +69,11 @@ class H5CppConan(ConanFile):
             self.requires("openmpi/4.1.0")
 
     def build(self):
+        cmake = CMake(self)
         build_env = VirtualBuildEnv(self).vars()
         run_env = VirtualRunEnv(self).vars()
         with build_env.apply():
             with run_env.apply():
-                cmake = CMake(self)
                 cmake.configure(variables={
                     "H5CPP_CONAN": "MANUAL",
                     "H5CPP_WITH_MPI": self.options.get_safe("with_mpi", False),
