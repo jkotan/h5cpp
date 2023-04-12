@@ -169,6 +169,7 @@ jobs:
           .\conanbuildenv-release-x86_64.ps1
           .\conanrunenv-release-x86_64.ps1
           dir .\bin
+          $ENV:PATH += Join-Path $PWD.path 'bin'
           # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC"
           # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools"
           # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC"
