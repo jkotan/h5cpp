@@ -156,6 +156,8 @@ jobs:
             --generator VirtualRunEnv
       - name: build with cmake
         run: |
+          .build\conanbuildenv-release-x86_64.ps1
+          .build\conanrunenv-release-x86_64.ps1
           CONAN_ARGS="--profile .github/workflows/conan/profiles/vs2019 \
             -o with_boost=${H5CPP_WITH_BOOST} \
             -o shared=${H5CPP_SHARED} \
@@ -168,14 +170,16 @@ jobs:
           cd build
           .\conanbuildenv-release-x86_64.ps1
           .\conanrunenv-release-x86_64.ps1
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64"
-          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86"
+          dir .\bin
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64"
+          # dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86"
           & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86\dumpbin.exe" /imports .\bin\attribute_test.exe
+          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.35.32215\bin\HostX64\x86\dumpbin.exe" /dependents .\bin\attribute_test.exe
           .\bin\attribute_test.exe
           .\bin\core_test.exe
           .\bin\dataspace_test.exe
