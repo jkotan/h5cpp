@@ -160,6 +160,7 @@ jobs:
             -o with_boost=${H5CPP_WITH_BOOST} \
             -o shared=${H5CPP_SHARED} \
             -o hdf5/*:shared=${H5CPP_SHARED}"
+          $ENV:PATH += Join-Path $PWD.path 'build/bin'
           conan build . ${CONAN_ARGS} \
             --lockfile conan.lock \
             --output-folder build
