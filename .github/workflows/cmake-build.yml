@@ -294,7 +294,7 @@ jobs:
         if: ${{ matrix.mpi == 'mpi' }}
         run: |
             apt-get update
-            apt-get install -y --no-install-recommends
+            apt-get install -y --no-install-recommends \
               ssh \
               openmpi-bin \
               libopenmpi-dev
