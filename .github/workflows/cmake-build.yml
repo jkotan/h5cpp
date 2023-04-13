@@ -296,6 +296,7 @@ jobs:
         run: |
             apt-get update
             apt-get install -y --no-install-recommends \
+              build-essential \
               cmake \
               catch2 \
               g++ \
