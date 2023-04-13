@@ -307,6 +307,8 @@ jobs:
               ssh \
               openmpi-bin \
               libhdf5-mpi-dev \
+              linux-generic \
+              libmpich-dev \
               libopenmpi-dev
       - name: build with cmake
         run: |
