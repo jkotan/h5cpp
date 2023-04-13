@@ -279,7 +279,8 @@ jobs:
             ${{ matrix.shared }} \
             ${{ matrix.boost }} \
             ${{ matrix.mpi }}
-      - name: install prerequisites
+      - name: install SERIAL prerequisites
+        if: ${{ matrix.mpi == 'serial' }}
         run: |
           apt-get update
           apt-get -y install \
@@ -295,8 +296,16 @@ jobs:
         run: |
             apt-get update
             apt-get install -y --no-install-recommends \
+              cmake \
+              catch2 \
+              g++ \
+              gpg \
+              libhdf5-dev \
+              libboost-filesystem-dev \
+              wget \
               ssh \
               openmpi-bin \
+              libhdf5-mpi-dev \
               libopenmpi-dev
       - name: build with cmake
         run: |
