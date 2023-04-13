@@ -279,7 +279,7 @@ jobs:
             ${{ matrix.shared }} \
             ${{ matrix.boost }} \
             ${{ matrix.mpi }}
-      - name: install SERIAL prerequisites
+      - name: install serial prerequisites
         if: ${{ matrix.mpi == 'serial' }}
         run: |
           apt-get update
