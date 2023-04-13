@@ -66,5 +66,7 @@ if (H5CPP_SWMR_ENABLED)
 endif ()
 
 if (H5CPP_MPI_ENABLED)
+  include_directories(SYSTEM ${MPI_C_INCLUDE_PATH})
+  include_directories(SYSTEM ${MPI_INCLUDE_PATH})
   add_subdirectory(mpi)
 endif ()
